@@ -1,0 +1,82 @@
+﻿body 
+{
+    background-image: "/../Images/BG.gif"
+}
+
+/*Category Box Styling */
+.catbox
+{
+   color:maroon;    
+   font-weight:bold;
+   width: 126px;
+   height:68px;
+}
+
+/* Category Section Styling */
+#catstyle
+{
+    height: 400px;
+    width:30%;
+    background-image:url("../Images/BG.gif");
+    font-weight:bold;
+    vertical-align: top;
+}
+/*Product Section Styling */
+#infostyle
+{
+    height:400px;
+    width: 603px;
+    background-color:#CCCCFF;  
+    font-weight:bold;
+    font-family:Times New Roman;
+    vertical-align:top;
+}
+
+/*GridViewProduct Image Styling */
+.pimage
+{
+    height:50px;
+    width:50px;
+}
+
+
+/*Details Info Stying */
+.detailsbox
+{
+    width:600px;
+    background-color:Gray;
+    
+}
+
+/*Details Header Image */
+.detailsheaderimage
+{
+    width:100%;
+    
+}
+
+
+
+
+/*Asn3 text styling */
+.head2
+{
+   color:Maroon;
+   font-weight:bold;
+   
+}
+
+.head3
+{
+    color:Maroon;
+}
+
+.salelabel
+{
+   color:#3B67F4;
+}
+
+.salebox
+{
+    background-color:Yellow;
+} 

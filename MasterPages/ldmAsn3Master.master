@@ -1,0 +1,61 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeFile="ldmAsn3Master.master.cs" Inherits="ldmAsn3Master" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head id="Head1" runat="server">
+<!--Devloper:Leonard McGhie  
+    Purpose: To display the devlopment and utilization of master pages.
+-->
+    <link href="../Styles/PepsiStyle.css" rel="stylesheet" type="text/css" />
+
+    <title>Assignment 3</title>
+    <asp:ContentPlaceHolder id="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <form id="form1" runat="server">
+    <div>
+        <!--Masterpage info -->
+        <table border="1px">
+            <tr>
+                <td colspan="2"> 
+                    <asp:Image ID="ImgLogo" runat="server" ImageUrl="~/Images/Logo.jpg" 
+                        AlternateText="logo" CssClass="detailsheaderimage" /> 
+                </td>             
+            </tr>
+            
+            <tr>            
+                <td id="catstyle">   
+                    <!--Link to homepage -->
+                    <asp:HyperLink ID="HplHome" runat="server" NavigateUrl="~/ldmHome.aspx">Home</asp:HyperLink>
+                     <br />  
+                     <asp:HyperLink ID="hylSalesManager" runat="server" NavigateUrl="~/ldmManagerPage.aspx">Sales Manager Page</asp:HyperLink>
+                    <br /> <br />
+                    <asp:Label ID="lblSelectCategory" runat="server" Text="Select a category: "></asp:Label><br />
+                    <asp:ListBox ID="lsbCategory" runat="server" DataSourceID="SqlDataSource1" 
+                        DataTextField="CategoryName" DataValueField="CategoryCode" 
+                        CssClass="catbox" AutoPostBack="True" 
+                        onselectedindexchanged="lsbCategory_SelectedIndexChanged"></asp:ListBox>  
+                        
+          <!--Populate listbox with category name and category code values -->                      
+                    <asp:SqlDataSource ID="SqlDataSource1" runat="server" 
+                        ConnectionString="<%$ ConnectionStrings:ShopCartConnectionString %>" 
+                        SelectCommand="SELECT [CategoryCode], [CategoryName] FROM [Categories] ORDER BY [CategoryName]">
+                    </asp:SqlDataSource>
+                </td> 
+                <td id="infostyle">
+                     <asp:ContentPlaceHolder id="childbody" runat="server">
+        
+                    </asp:ContentPlaceHolder>
+                </td>               
+            </tr>
+           
+        </table>
+        
+        
+       
+    </div>
+    </form>
+</body>
+</html>
